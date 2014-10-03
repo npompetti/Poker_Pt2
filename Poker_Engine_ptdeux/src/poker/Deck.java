@@ -3,33 +3,25 @@ package poker;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Deck {
 	private ArrayList<Card> cards;
 	
-	public Deck(int NumbrofJacks){
-		
-//		Create an ArrayList of Cards, add each card
-			ArrayList<Card> MakingDeck = new ArrayList<Card>();
-			for (short i = 0; i <= 3; i++) {
-				eSuit SuitValue = eSuit.values()[i];			
-				for (short j = 0; j <= 12; j++) {
-					eRank RankValue = eRank.values()[j];				
-					Card NewCard = new Card(SuitValue,RankValue);
-					MakingDeck.add(NewCard);
-				}
-			}
-			
-			//	Set the instance variable
-			cards = MakingDeck;
-		
+	
+	public Deck(int NumbrofJacks, ArrayList<Card> WildCards){
+		this();
+		//Scanner input = new Scanner(System.in);
+		//NumbrofJacks = input.nextInt();
+		System.out.println("How many jokers are in the deck?");
 		for(int i=0; i < NumbrofJacks; i++){
-			Card c = new Card(eSuit.JOKER,eRank.JOKER);
-			cards.add(c);
+			cards.add(new Card(eSuit.JOKER,eRank.JOKER));
 		}
-		
-		Collections.shuffle(cards);
+		//insert for each to iterate through the arraylist of wildcards
+		for(Card deckCard : cards){
 			
+		}
+		shuffleCards();
 	}
 
 	public Deck() {
@@ -47,10 +39,13 @@ public class Deck {
 		
 		//	Set the instance variable
 		cards = MakingDeck;
+		shuffleCards();
 		
-		//	Shuffle the cards
-		Collections.shuffle(cards);
 		
+	}
+	private void shuffleCards(){
+//		Shuffle the cards
+			Collections.shuffle(cards);
 	}
 
 	public Card drawFromDeck() {

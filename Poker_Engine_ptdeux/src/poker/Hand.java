@@ -1,5 +1,8 @@
 package poker;
-
+//Make an array of hands that will hold every hand that is given back from eval,
+//sort that array to the one with the best score.
+//This is after you are given a dealt hand and figure out if you have an Jokers.
+//
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
