@@ -19,6 +19,11 @@ public class Deck {
 		}
 		//insert for each to iterate through the arraylist of wildcards
 		for(Card deckCard : cards){
+			for(Card Wild: WildCards){
+				if((deckCard.getSuit() == (Wild.getSuit())) && (deckCard.getRank() == Wild.getRank())){
+					deckCard.setWild();
+				}
+			}
 			
 		}
 		shuffleCards();
